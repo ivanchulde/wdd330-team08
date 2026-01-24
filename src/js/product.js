@@ -20,3 +20,28 @@ async function addToCartHandler(e) {
 document
   .getElementById("addToCart")
   .addEventListener("click", addToCartHandler);
+
+function displayDiscount() {
+    
+    const originalPriceElement = document.querySelector('.product-card__price');
+    const salePriceElement = document.querySelector('.product-discount__price');
+    const badgeElement = document.querySelector('.discount-badge');
+
+    const originalPrice = parseFloat(originalPriceElement.textContent.replace('$', ''));
+    const salePrice = parseFloat(salePriceElement.textContent.replace('$', ''));
+
+    if (salePrice < originalPrice) {
+        const discountAmount = originalPrice - salePrice;
+        const discountPercentage = Math.round((discountAmount / originalPrice) * 100); // Calculate percentage
+
+    badgeElement.textContent = `SAVE ${discountPercentage}%`;
+
+    originalPriceElement.classList.add('strikethrough');
+
+    } else {
+        
+        badgeElement.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', displayDiscount);
