@@ -261,3 +261,23 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.product-discount__price {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.discount-badge {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+}
