@@ -1,6 +1,5 @@
-//import { getLocalStorage, setLocalStorage } from "./utils.mjs";
-import ProductData from "./ProductData.mjs";
 import { getParam, loadHeaderFooter } from "./utils.mjs";
+import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
 
 loadHeaderFooter();
@@ -8,7 +7,7 @@ loadHeaderFooter();
 const dataSource = new ProductData("tents");
 const productID = getParam("product");
 
-const product = new ProductDetails(productID, dataSource)
+const product = new ProductDetails(productID, dataSource);
 product.init();
 
 //function addProductToCart(product) {
@@ -51,4 +50,4 @@ function displayDiscount() {
     }
   }
 
-  document.addEventListener('DOMContentLoaded', displayDiscount);
+  document.addEventListener('DOMContentLoaded', displayDiscount)
